@@ -23,7 +23,13 @@ jobs:
           node-version: 20
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       - name: Run Cypress Tests
         run: npx cypress run
+        
+      - name: Show files
+        run: |
+          pwd
+          ls -la
+          ls -la node_modules/.bin || true 
